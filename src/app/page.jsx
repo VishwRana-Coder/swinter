@@ -1,10 +1,17 @@
+//Importing Components
+import Header from "@/components/Header";
+import Landing from "@/components/Landing";
+
 
 export default function Home() {
   return (
-    <div className="flex w-full justify-center h-[80vh] items-center">
-      <h1 className="text-5xl flex text-center">
-        Welcome to Swinter
-      </h1>
+    <div>
+      <header>
+        <Header />
+      </header>
+      <main>
+        <Landing />
+      </main>
     </div>
   );
 }
