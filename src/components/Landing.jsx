@@ -38,7 +38,7 @@ const Landing = () => {
 
   return (
     <>
-      <div className="container gap-20 md:flex-row flex-col mb-20 md:mb-2">
+      <div className="container gap-20 md:flex-row flex-col mb-20 md:mb-2 px-5">
         <div className="mt-[100px]">
           <div className="title">
             <h1 className="text-5xl max-w-[500px]">Connect to people with</h1>
@@ -57,7 +57,7 @@ const Landing = () => {
           </div>
         </div>
 
-        <div className="md:w-[50%] mt-[30px] w-full">
+        <div className="md:w-[50%] mt-[30px] w-full ">
           <Tabs className="w-full flex items-center flex-col" defaultValue="sign-in">
             <TabsList>
               <TabsTrigger value="sign-in">Sign In</TabsTrigger>
