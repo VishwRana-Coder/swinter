@@ -15,6 +15,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 //Importing Authetications
 import GoogleLogin from "@/auth/GoogleLogin";
+import SignUpLogin from "@/auth/SignUp";
+import SignInLogin from "@/auth/SignIn";
+
 
 
 const Landing = () => {
@@ -41,6 +44,21 @@ const Landing = () => {
 
   const isInputInvalid = (field) => touched[field] && !formState[field];
 
+
+  const signUp = () => {
+    SignUpLogin({
+      email: formState.email,
+      password: formState.password,
+      name: formState.username,
+    });
+  };
+  const signIn = () => {
+    SignInLogin({
+      email: formState.email,
+      password: formState.password,
+    })
+  }
+  
 
   return (
     <>
@@ -104,6 +122,7 @@ const Landing = () => {
                   <Button
                     className={`mt-4 ${(!formState.email || !formState.password) ? "hover:cursor-not-allowed" : ""}`}
                     disabled={!formState.email || !formState.password}
+                    onClick={signIn}
                   >
                     Login
                   </Button>
@@ -162,7 +181,8 @@ const Landing = () => {
                   />
                   <Button
                     className="mt-4"
-                    disabled={!formState.username || !formState.email || !formState.password}
+                    disabled={!formState.username || !formState.email || !formState.password} 
+                    onClick={signUp}
                   >
                     Sign Up
                   </Button>

@@ -11,10 +11,6 @@ const GoogleLogin = async () => {
         const user = result.user;
         const docRef = doc(db, "Users", user.uid);
         const docSnap = await getDoc(docRef);
-
-        localStorage.setItem("Name", user.displayName);
-        localStorage.setItem("Email", user.email);
-        localStorage.setItem("Photo", user.photoURL);
         localStorage.setItem("UID", user.uid);
         if (!docSnap.exists()) {
             await setDoc(docRef, {
