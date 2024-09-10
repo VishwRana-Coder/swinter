@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getData } from "@/db/FirebaseDB";
 import Loading from "./Spin";
-import WritePost from "./WritePostModal";
 
 // Importing Icons
 import { FaHome, FaBell, FaUser } from "react-icons/fa";
@@ -60,7 +59,6 @@ const SideBar = () => {
               <h3 className="text-xl font-medium">{userData.userName}</h3>
             </div>
           </Link>
-          <WritePost />
           <ul className="mt-10">
           {nav_items.map((item, index) => (
             <Link href={item.path} key={index}>
