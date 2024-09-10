@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Modal } from 'antd';
 import { ShadcnButton } from './ui/button';
 import { Button } from 'antd/es/radio';
-
+import ReactQuill from 'react-quill';
 
 
 //Importing Icons
@@ -43,6 +43,7 @@ const WritePost = () => {
         ]}
         onCancel={() => setModalOpen(false)}
       >
+        <ReactQuill />
       </Modal>
     </div>
   );
