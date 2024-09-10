@@ -3,9 +3,6 @@ import React, { useState } from 'react';
 import { Modal } from 'antd';
 import { ShadcnButton } from './ui/button';
 import { Button } from 'antd/es/radio';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-
 
 
 
@@ -46,7 +43,6 @@ const WritePost = () => {
         ]}
         onCancel={() => setModalOpen(false)}
       >
-        <ReactQuill theme="snow" value={value} onChange={setValue} />
       </Modal>
     </div>
   );
