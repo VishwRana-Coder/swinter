@@ -1,35 +1,21 @@
-"use client"
-import React, { useEffect, useState } from 'react';
-import { getData } from '@/db/FirebaseDB';
+//Importing Components
+import SideBar from "@/components/SideBar";
+import Feed from "@/components/Feed";
 
-const Page = () => {
-  const [userData, setUserData] = useState(null);
 
-  useEffect(() => {
-    // This ensures that the code runs on the client side where localStorage is available
-    const fetchUserData = async () => {
-      const data = await getData();
-      setUserData(data);
-    };
-
-    fetchUserData();
-  }, []);
-
+const page = () => {
   return (
     <div>
-      {userData ? (
-        <div>
-          <h1>User Data</h1>
-          <p>Name: {userData.userName}</p>
-          <p>UID: {userData.userUid}</p>
-          <p>Email: {userData.userEmail}</p>
-          <img src={userData.userPhoto} alt="" />
+      <div className="flex flex-col md:flex-row">
+        <div className="md:w-[25%] w-full mt-5 md:fixed md:left-0 md:top-0 md:h-full">
+          <SideBar />
         </div>
-      ) : (
-        <p>Loading user data...</p>
-      )}
+        <div className="md:w-[60%] text-center w-full mt-5 md:ml-[25%]">
+          <Feed />
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Page;
+export default page;
