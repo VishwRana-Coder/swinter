@@ -1,5 +1,6 @@
 "use client"
 
+//Importing Components and Icons
 import { useState } from "react";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { FaApple, FaGoogle } from "react-icons/fa";
@@ -9,6 +10,11 @@ import { ShadcnButton } from "./ui/button";
 import { Button } from "antd";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+
+
+//Importing Authetications
+import GoogleLogin from "@/auth/GoogleLogin";
 
 
 const Landing = () => {
@@ -102,7 +108,7 @@ const Landing = () => {
                     Login
                   </Button>
                   <div className="flex gap-2 mt-3">
-                    <ShadcnButton className="mt-2 flex gap-2" >
+                    <ShadcnButton className="mt-2 flex gap-2" onClick={GoogleLogin}>
                       <FaGoogle /> Login with Google
                     </ShadcnButton>
                   </div>
@@ -161,7 +167,7 @@ const Landing = () => {
                     Sign Up
                   </Button>
                   <div className="flex gap-2 mt-3">
-                    <ShadcnButton className="mt-2 flex gap-2">
+                    <ShadcnButton className="mt-2 flex gap-2" onClick={GoogleLogin}>
                       <FaGoogle /> Sign Up with Google
                     </ShadcnButton>
                   </div>
