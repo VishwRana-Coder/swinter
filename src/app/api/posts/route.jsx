@@ -1,11 +1,18 @@
-import { connectionStr } from "@/lib/db";
 import mongoose from "mongoose";
-import { NextResponse } from "next/server";
-import {Post} from '@/lib/model/posts'
 
-export async function GET(){
+const connectToDatabase = async () => {
+  if (mongoose.connections[0].readyState) {
+    return; // Already connected
+  }
+  try {
+    await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error("MongoDB connection error:", error);
+  }
+};
 
-    await mongoose.connect(connectionStr);
-    const data = await Post.find()
-    return NextResponse.json({posts:data})
-}
+export default connectToDatabase;
