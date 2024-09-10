@@ -16,7 +16,7 @@ const SignUpLogin = async ({ email, password, name }) => {
       await setDoc(docRef, {
         userName: user.displayName || name,  // Use provided name if displayName is null
         userEmail: user.email,
-        userPhoto: user.photoURL || "https://firebasestorage.googleapis.com/v0/b/swinter-500.appspot.com/o/image-removebg-preview%20(1).png?alt=media&token=1964fc41-b894-4fe3-8c1b-17cba31200c0", // Use default if photoURL is null
+        userPhoto: user.photoURL || "https://firebasestorage.googleapis.com/v0/b/swinter-500.appspot.com/o/image-removebg-preview%20(3).png?alt=media&token=b3d5db63-426c-409f-b2cb-a42d93d7f267", // Use default if photoURL is null
         userUid: user.uid
       });
     }
