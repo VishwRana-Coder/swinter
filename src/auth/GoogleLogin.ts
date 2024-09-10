@@ -1,7 +1,9 @@
+"use client"
 import { auth, googleProvider, db } from '@/firebase/config'
 import { message } from 'antd'
 import { signInWithPopup } from 'firebase/auth'
 import { setDoc, doc, getDoc } from 'firebase/firestore'
+
 
 const GoogleLogin = async () => {
     try {
@@ -22,6 +24,7 @@ const GoogleLogin = async () => {
                 userUid: user.uid
             });
         }
+        window.location.href = "/home"
         message.success("Successfully logged in")
     } catch (error) {
         message.error(error.message);
