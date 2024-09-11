@@ -36,6 +36,8 @@ const SideBar = () => {
   return (
     <div>
       {userData ? (
+        
+        <>
         <div className="md:border-[#d6d6d6] border-r-2 pl-3 px-3 h-[90vh] top-0 hidden md:block">
           {/* Logo */}
           <Link href={"/home"}>
@@ -77,6 +79,10 @@ const SideBar = () => {
           ))}
         </ul>
         </div>
+        <div className="flex md:hidden">
+          Hello
+        </div>
+        </>
       ) : (
         <>
             <Loading />
