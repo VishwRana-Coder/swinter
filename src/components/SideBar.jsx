@@ -41,7 +41,7 @@ const SideBar = () => {
           <Link href={"/home"}>
             <div>
               <h1 className="text-5xl text-center md:text-left">
-                Nexter
+                Swinter
                 <span className="text-blue-600">.</span>
               </h1>
             </div>
