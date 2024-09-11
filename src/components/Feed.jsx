@@ -6,7 +6,7 @@ import { ShadcnButton } from "./ui/button";
 import { AiOutlineLike, AiOutlineDislike } from "react-icons/ai";
 import { IoShareSocial } from "react-icons/io5";
 import { FaRegCommentDots } from "react-icons/fa";
-import { getPosts } from "@/actions/postActions";
+import { getPosts } from "@/app/_actions/postActions";
 import Image from "next/image";
 
 
