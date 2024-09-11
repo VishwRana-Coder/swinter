@@ -2,6 +2,8 @@
 
 import PostModel from "@/models/postModel"
 import connectDB from "@/config/database"
+import { NextResponse } from "next/server";
+
 
 export async function getPosts(){
   try {
@@ -10,7 +12,7 @@ export async function getPosts(){
 
     // throw new Error('Error!')
 
-    return { data }
+    return NextResponse.json({ data })
   } catch (error) {
     return { errMsg: error.message }
   }
