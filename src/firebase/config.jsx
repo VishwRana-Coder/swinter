@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from 'firebase/auth'
-import {getFirestore} from 'firebase/firestore'
-
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from 'firebase/storage'
 
 
 const firebaseConfig = {
@@ -10,13 +10,13 @@ const firebaseConfig = {
   projectId: "swinter-500",
   storageBucket: "swinter-500.appspot.com",
   messagingSenderId: "1077638961469",
-  appId: "1:1077638961469:web:377a5d4807a20621494d54"
+  appId: "1:1077638961469:web:377a5d4807a20621494d54",
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 const db = getFirestore(app);
+const storage = getStorage(app);
 
-
-export { auth, googleProvider, db }
+export { auth, googleProvider, db, storage };

@@ -14,6 +14,19 @@ import { FaHome, FaBell, FaUser } from "react-icons/fa";
 import { IoMdSettings, IoIosMenu } from "react-icons/io";
 import { IoChatbox } from "react-icons/io5";
 
+
+//Importing UI
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
+
+
+
 const SideBar = () => {
   const nav_items = [
     { name: "Home", path: "/home", icons: <FaHome /> },
@@ -79,9 +92,69 @@ const SideBar = () => {
           ))}
         </ul>
         </div>
-        <div className="flex md:hidden">
-          Hello
+        <div className="flex md:hidden justify-between container fixed h-[60px] bg-[#ffff] z-[800] mt-0 items-center px-5">
+        <div>
+          <div>
+            <h1 className="text-4xl">
+              Nexter
+              <span className="text-light-accent dark:text-dark-accent">.</span>
+            </h1>
+          </div>
         </div>
+        <Sheet>
+          <SheetTrigger>
+            <IoIosMenu />
+          </SheetTrigger>
+          <SheetContent>
+            <SheetHeader>
+              <SheetDescription>
+                <div>
+                  <h1 className="text-5xl text-center md:text-left">
+                    Nexter
+                    <span className="text-light-accent dark:text-dark-accent">
+                      .
+                    </span>
+                  </h1>
+                </div>
+                {/* User Info */}
+                <Link href={"/profile"}>
+                  <div className="bg-[#fcfcfc] rounded-lg flex items-center mt-5 justify-center space-x-2 py-2 border border-[#b7b7b7]">
+                    <Image
+                      src={
+                        userData.userPhoto
+                      }
+                      alt="User Image"
+                      width={40}
+                      height={40}
+                      className="rounded-full"
+                    />
+                    <h3 className="text-xl font-medium">
+                      {userData.userName}
+                    </h3>
+                  </div>
+                </Link>
+                <div>
+                  <WritePost />
+                </div>
+                <ul className="mt-5">
+                  {nav_items.map((item, index) => (
+                    <Link href={item.path} key={index}>
+                      <li
+                        className={`mt-3 h-[50px] font-semibold rounded-xl flex justify-center items-center ${
+                          item.path === pathName && "text-white bg-[#0F172A]"
+                        }`}
+                        key={index}
+                      >
+                        {item.name}
+                      </li>
+                    </Link>
+                  ))}
+                </ul>
+              </SheetDescription>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
+      </div>
         </>
       ) : (
         <>

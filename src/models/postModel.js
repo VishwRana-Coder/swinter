@@ -16,6 +16,10 @@ const postSchema = new Schema({
   timeStamp: {
     type: String,
     required: true,
+  },
+  postImage: {
+    type: [String],
+    required: true
   }
 
 }, { timestamps: true })
