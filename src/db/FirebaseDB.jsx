@@ -21,7 +21,6 @@ export const getData = async () => {
         console.error("Error fetching user data:", error);
         return null;
       }
-      console.log(UID)
     } else {
       console.error("UID not found in localStorage");
       return null;

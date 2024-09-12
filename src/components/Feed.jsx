@@ -44,7 +44,7 @@ const Feed = () => {
       {mainPosts.map((item, index) => (
         <main
           key={index}
-          className="bg-[#F2F2F2] flex md:w-[70%] mt-[60px] md:mt-0 lg:w-[80%] sm:w-[500px] w-[300px] border border-[#d6d6d6] rounded-lg flex-col mb-10 text-[14px]"
+          className="bg-[#F2F2F2] flex md:w-[70%]  md:mt-0 lg:w-[80%] sm:w-[500px] w-[300px] border border-[#d6d6d6] rounded-lg flex-col mb-10 text-[14px]"
         >
           <Link href="">
             <div className="flex items-center gap-2 px-5 pt-2">

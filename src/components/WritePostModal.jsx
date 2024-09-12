@@ -34,7 +34,6 @@ const WritePost = () => {
     if (fileList && fileList.length > 0) {
       const urls = await uploadImages(fileList); // Upload files and get URLs
       setImageUrls(urls);
-      console.log("Uploaded Image URLs:", urls);
       setShowText(true);
     }
   };
@@ -58,7 +57,6 @@ const WritePost = () => {
       });
 
       if (result.success) {
-        console.log(result.message);
         setModalOpen(false); // Close modal after successful post
         setTextValue(""); // Clear text
         setImageUrls([]); // Clear images
